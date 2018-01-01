@@ -1,3 +1,9 @@
 [submodule "deps/googletest"]
 	path = deps/googletest
 	url = https://github.com/google/googletest
+[submodule "deps/glfw"]
+	path = deps/glfw
+	url = https://github.com/glfw/glfw
+[submodule "deps/glm"]
+	path = deps/glm
+	url = https://github.com/g-truc/glm
