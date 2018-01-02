@@ -1,5 +1,10 @@
+#include <GL/lpgl.h>
+
 #include <GLFW/glfw3.h>
+
 #include <vector>
+
+#include <cstdio>
 
 int main(int argc, char** argv)
 {
@@ -19,12 +24,9 @@ int main(int argc, char** argv)
 
     glfwMakeContextCurrent(window);
 
-    std::vector<float> backBuffer;
+    lpgl::lpglInit(800, 600);
 
-    for (int i = 0; i < width * height * 2 * 2; ++i)
-    {
-        backBuffer.push_back(0.5f);
-    }
+    glClearColor(0, 0, 0.3f, 0.0f);
 
     while (!glfwWindowShouldClose(window))
     {
@@ -32,7 +34,7 @@ int main(int argc, char** argv)
 
         glRasterPos2d(-1.0, -1.0);
         glDrawPixels(width * 2, height * 2, GL_RED,
-        GL_FLOAT, backBuffer.data());
+                     GL_FLOAT, lpgl::lpglCommit());
 
         glfwSwapBuffers(window);
 

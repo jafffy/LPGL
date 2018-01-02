@@ -6,6 +6,8 @@ set(GLM_INCLUDE_PATH "" CACHE PATH "")
 include_directories(
     ${GLFW_INCLUDE_PATH}
     ${GLM_INCLUDE_PATH}
+
+    ${LPGL_INCLUDE}
 )
 
 set(EXAMPLE1_SOURCE_FILES example1.cc)
@@ -14,6 +16,8 @@ add_executable(example1
     ${EXAMPLE1_SOURCE_FILES}
 )
 target_link_libraries(example1
+    lpgl
+
     ${OPENGL_LIBRARY}
     ${GLFW_LIBRARY}
 )
